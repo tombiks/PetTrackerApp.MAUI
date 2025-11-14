@@ -10,6 +10,7 @@ namespace PetTrackerApp.MAUI
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .InitializeFreakyControls(useSkiaSharp: true, useFreakyEffects: true)
                 .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
