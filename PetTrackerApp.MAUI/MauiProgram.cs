@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Maui.FreakyControls;
+using Maui.FreakyControls.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace PetTrackerApp.MAUI
 {
@@ -9,6 +12,8 @@ namespace PetTrackerApp.MAUI
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .InitializeFreakyControls(useSkiaSharp: true, useFreakyEffects: true)
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
