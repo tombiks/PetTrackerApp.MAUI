@@ -22,7 +22,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PetTrackerApp.MAUI.Resources.Languages.AppResources", typeof(AppResources).Assembly);
@@ -51,7 +51,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Track everything about your lovely friend.
+        /// </summary>
+        public static string App_Slogan {
+            get {
+                return ResourceManager.GetString("App_Slogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
-        internal static string PetGender_Female {
+        public static string PetGender_Female {
             get {
                 return ResourceManager.GetString("PetGender_Female", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Male.
         /// </summary>
-        internal static string PetGender_Male {
+        public static string PetGender_Male {
             get {
                 return ResourceManager.GetString("PetGender_Male", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Bird.
         /// </summary>
-        internal static string PetType_Bird {
+        public static string PetType_Bird {
             get {
                 return ResourceManager.GetString("PetType_Bird", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Cat.
         /// </summary>
-        internal static string PetType_Cat {
+        public static string PetType_Cat {
             get {
                 return ResourceManager.GetString("PetType_Cat", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Dog.
         /// </summary>
-        internal static string PetType_Dog {
+        public static string PetType_Dog {
             get {
                 return ResourceManager.GetString("PetType_Dog", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Exotic pet.
         /// </summary>
-        internal static string PetType_ExoticPet {
+        public static string PetType_ExoticPet {
             get {
                 return ResourceManager.GetString("PetType_ExoticPet", resourceCulture);
             }
@@ -117,7 +126,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Fish.
         /// </summary>
-        internal static string PetType_Fish {
+        public static string PetType_Fish {
             get {
                 return ResourceManager.GetString("PetType_Fish", resourceCulture);
             }
@@ -126,7 +135,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
-        internal static string PetType_Others {
+        public static string PetType_Others {
             get {
                 return ResourceManager.GetString("PetType_Others", resourceCulture);
             }
@@ -135,7 +144,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Rabbit.
         /// </summary>
-        internal static string PetType_Rabbit {
+        public static string PetType_Rabbit {
             get {
                 return ResourceManager.GetString("PetType_Rabbit", resourceCulture);
             }
@@ -144,7 +153,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Reptile.
         /// </summary>
-        internal static string PetType_Reptile {
+        public static string PetType_Reptile {
             get {
                 return ResourceManager.GetString("PetType_Reptile", resourceCulture);
             }
@@ -153,7 +162,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to SmallMammal.
         /// </summary>
-        internal static string PetType_SmallMammal {
+        public static string PetType_SmallMammal {
             get {
                 return ResourceManager.GetString("PetType_SmallMammal", resourceCulture);
             }

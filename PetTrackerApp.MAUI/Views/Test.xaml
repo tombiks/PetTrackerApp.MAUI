@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetTrackerApp.MAUI.Views.Test"
-             Title="Test">
+             NavigationPage.HasNavigationBar="False">
     <!-- Expanded Header -->
     <Grid x:Name="ExpandedHeader"
-      HeightRequest="200"
+      HeightRequest="300"
       VerticalOptions="Start"
       RowDefinitions="Auto, *">
 
@@ -23,8 +23,8 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Button Grid.Row="0"
-            Command="{Binding ChangeLanguageCommand}"
+        <!-- Command="" button command buraya gelecek-->
+        <Button Grid.Row="0"             
             ImageSource="icon_option.png"
             BackgroundColor="#40FFFFFF"
             CornerRadius="22"
@@ -42,20 +42,20 @@
                          Spacing="0"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         Margin="0,0,0,0">
-            <Image Source="petplus_logo.png"
+                         Margin="0,-30,0,0">
+            <Image Source="petplus_logo.svg"
                Aspect="AspectFit"
-               WidthRequest="150"
-               HeightRequest="150"
+               WidthRequest="200"
+               HeightRequest="200"
                HorizontalOptions="Center" />
 
-            <Image Source="petplus_text.png"
+            <Image Source="petplus_text.svg"
                Aspect="AspectFit"
                WidthRequest="200"
                HeightRequest="105"
                HorizontalOptions="Center" />
-
-            <Label Text="{Binding AppSloganText}"
+            <!--Slogan Text Buraya gelecek-->
+            <Label Text=""
                FontSize="15"
                TextColor="White"
                HorizontalOptions="Center"
