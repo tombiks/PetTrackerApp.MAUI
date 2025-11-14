@@ -3,10 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetTrackerApp.MAUI.Views.Test"
              Title="Test">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <!-- Expanded Header -->
+    <Grid x:Name="ExpandedHeader"
+      HeightRequest="200"
+      VerticalOptions="Start"
+      RowDefinitions="Auto, *">
+
+        <Grid.Shadow>
+            <Shadow Brush="Black"
+                Opacity="0.5"
+                Offset="0,5"
+                Radius="10" />
+        </Grid.Shadow>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#667EEA" Offset="0.0" />
+                <GradientStop Color="#764BA2" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Button Grid.Row="0"
+            Command="{Binding ChangeLanguageCommand}"
+            ImageSource="icon_option.png"
+            BackgroundColor="#40FFFFFF"
+            CornerRadius="22"
+            WidthRequest="40"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="0,0,0,0"
+            
+            SemanticProperties.Description="Dil ve Uygulama Ayarları"
+            SemanticProperties.Hint="Uygulama ayarlarını açar">
+        </Button>
+
+        <VerticalStackLayout Grid.Row="1"
+                         Spacing="0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Margin="0,0,0,0">
+            <Image Source="petplus_logo.png"
+               Aspect="AspectFit"
+               WidthRequest="150"
+               HeightRequest="150"
+               HorizontalOptions="Center" />
+
+            <Image Source="petplus_text.png"
+               Aspect="AspectFit"
+               WidthRequest="200"
+               HeightRequest="105"
+               HorizontalOptions="Center" />
+
+            <Label Text="{Binding AppSloganText}"
+               FontSize="15"
+               TextColor="White"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               Margin="0,0,0,0"
+               SemanticProperties.Description="Uygulamanın sloganı" />
+
+        </VerticalStackLayout>
+    </Grid>    
 </ContentPage>

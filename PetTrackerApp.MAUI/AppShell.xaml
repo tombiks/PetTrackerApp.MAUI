@@ -3,13 +3,13 @@
     x:Class="PetTrackerApp.MAUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PetTrackerApp.MAUI"
+    xmlns:local="clr-namespace:PetTrackerApp.MAUI.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="PetTrackerApp.MAUI">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:Test}"
         Route="MainPage" />
 
 </Shell>
