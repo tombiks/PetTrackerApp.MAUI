@@ -9,6 +9,10 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            <FileImageSource x:Key="PetPlus_Logo" File="petplus_logo.svg" />
+            <FileImageSource x:Key="PetPlus_Text" File="petplus_text.svg" />
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

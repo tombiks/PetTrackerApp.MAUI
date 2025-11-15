@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="App_Slogan" xml:space="preserve">
-    <value>Track everything about your lovely friend</value>
+    <value>Track everything about your lovely friend!</value>
   </data>
   <data name="PetGender_Female" xml:space="preserve">
     <value>Female</value>
