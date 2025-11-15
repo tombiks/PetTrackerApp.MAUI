@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:Test}"
+        ContentTemplate="{DataTemplate local:PetListView}"
         Route="MainPage" 
         Shell.NavBarIsVisible="False"/>
 

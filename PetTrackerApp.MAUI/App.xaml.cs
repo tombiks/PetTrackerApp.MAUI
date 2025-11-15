@@ -1,10 +1,12 @@
-﻿namespace PetTrackerApp.MAUI
+﻿using CommunityToolkit.Maui.Core.Platform;
+
+namespace PetTrackerApp.MAUI
 {
     public partial class App : Application
     {
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             MainPage = new AppShell();
         }

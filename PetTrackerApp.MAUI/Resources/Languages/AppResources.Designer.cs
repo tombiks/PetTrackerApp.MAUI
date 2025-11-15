@@ -61,7 +61,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Track everything about your lovely friend.
+        ///   Looks up a localized string similar to Track everything about your lovely friend!.
         /// </summary>
         public static string App_Slogan {
             get {

@@ -1,8 +1,8 @@
 namespace PetTrackerApp.MAUI.Views;
 
-public partial class Test : ContentPage
+public partial class PetListView : ContentPage
 {
-	public Test()
+	public PetListView()
 	{
 		InitializeComponent();
 	}

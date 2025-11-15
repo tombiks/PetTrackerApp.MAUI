@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetTrackerApp.MAUI.Views.Test"
+             xmlns:lang="clr-namespace:PetTrackerApp.MAUI.Resources.Languages"
+             x:Class="PetTrackerApp.MAUI.Views.PetListView"             
+             Title="PetListView"
              NavigationPage.HasNavigationBar="False">
+
     <!-- Expanded Header -->
     <Grid x:Name="ExpandedHeader"
-      HeightRequest="300"
+      HeightRequest="250"
       VerticalOptions="Start"
       RowDefinitions="Auto, *">
 
@@ -32,7 +35,7 @@
             HeightRequest="40"
             HorizontalOptions="Start"
             VerticalOptions="Start"
-            Margin="0,0,0,0"
+            Margin="10,10,0,0"
             
             SemanticProperties.Description="Dil ve Uygulama Ayarları"
             SemanticProperties.Hint="Uygulama ayarlarını açar">
@@ -42,27 +45,30 @@
                          Spacing="0"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         Margin="0,-30,0,0">
-            <Image Source="petplus_logo.svg"
+                         Margin="0,-80,0,0">
+            <Image Source="{StaticResource PetPlus_Logo}"
                Aspect="AspectFit"
                WidthRequest="200"
                HeightRequest="200"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               SemanticProperties.Description="Uygulamanın logosu" />
 
-            <Image Source="petplus_text.svg"
+            <Image Source="{StaticResource PetPlus_Text}"
                Aspect="AspectFit"
                WidthRequest="200"
                HeightRequest="105"
-               HorizontalOptions="Center" />
-            <!--Slogan Text Buraya gelecek-->
-            <Label Text=""
+               HorizontalOptions="Center"
+               Margin="0,-80,0,0"
+               SemanticProperties.Description="Uygulamanın text gorseli"/>
+
+            <Label Text="{x:Static lang:AppResources.App_Slogan}"
                FontSize="15"
                TextColor="White"
                HorizontalOptions="Center"
                HorizontalTextAlignment="Center"
-               Margin="0,0,0,0"
-               SemanticProperties.Description="Uygulamanın sloganı" />
+               Margin="0,-20,0,0"
+               SemanticProperties.Description="Uygulamanın slogani" />
 
         </VerticalStackLayout>
-    </Grid>    
+    </Grid>
 </ContentPage>
