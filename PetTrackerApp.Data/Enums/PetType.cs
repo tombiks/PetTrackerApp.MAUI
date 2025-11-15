@@ -1,6 +1,6 @@
 ﻿
 
-namespace PetTrackerApp.MAUI.Enums
+namespace PetTrackerApp.Data.Enums
 {
     public enum PetType
     {

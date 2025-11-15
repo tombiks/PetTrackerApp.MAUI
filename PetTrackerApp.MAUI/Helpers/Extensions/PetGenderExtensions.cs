@@ -1,4 +1,4 @@
-﻿using PetTrackerApp.MAUI.Enums;
+﻿using PetTrackerApp.Data.Enums;
 using PetTrackerApp.MAUI.Resources.Languages;
 
 namespace PetTrackerApp.MAUI.Helper.Extensions
