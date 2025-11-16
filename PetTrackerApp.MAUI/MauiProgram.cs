@@ -7,6 +7,8 @@ using PetTrackerApp.Data.Mappings;
 using PetTrackerApp.Data.Services;
 using PetTrackerApp.MAUI.Views;
 using PetTrackerApp.MAUI.ViewModels;
+using PetTrackerApp.Data.Data;
+using System.Threading.Tasks;
 
 namespace PetTrackerApp.MAUI
 {
@@ -72,6 +74,9 @@ namespace PetTrackerApp.MAUI
                 using var scope = app.Services.CreateScope();
                 var context = scope.ServiceProvider.GetRequiredService<PetTrackerAppDbContext>();
                 await context.Database.MigrateAsync();
+
+                //veritabanina test verilerini ekliyoruz
+                await DbSeeder.Seed(context);
 
             }).GetAwaiter().GetResult();
 
