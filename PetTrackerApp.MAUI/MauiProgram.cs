@@ -45,11 +45,13 @@ namespace PetTrackerApp.MAUI
             //dbContext'in database'ine migrate islemini uygulattirip veritabaninin olusturulmasini sagliyoruz.
             var app = builder.Build();
 
-            using (var scope = app.Services.CreateScope())
+            Task.Run(async () =>
             {
-                var dbContext = scope.ServiceProvider.GetRequiredService<PetTrackerAppDbContext>();
-                dbContext.Database.Migrate();
-            }                      
+                using var scope = app.Services.CreateScope();
+                var context = scope.ServiceProvider.GetRequiredService<PetTrackerAppDbContext>();
+                await context.Database.MigrateAsync();
+
+            }).GetAwaiter().GetResult();
 
             return app;
         }
