@@ -4,7 +4,11 @@ using PetTrackerApp.MAUI.Resources.Languages;
 namespace PetTrackerApp.MAUI.Helper.Extensions
 {    
     public static class PetTypeExtensions
-    {        
+    {
+
+        //bu method suna yarar. PetType enum değerlerini lokalize edilmiş stringlere dönüştürür.
+        //yani dili ingilizce olursa ingilizce görmeye, türkçe olursa türkçe görmeye yarar.
+
         public static string ToLocalizedString(this PetType petType)
         {
             return petType switch

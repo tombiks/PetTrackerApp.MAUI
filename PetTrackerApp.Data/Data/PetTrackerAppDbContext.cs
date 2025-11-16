@@ -10,6 +10,7 @@ namespace PetTrackerApp.Data
 
         }
 
+        // Pet entity'si için DbSet tanımı
         public DbSet<Pet> Pets { get; set; }
     }
 

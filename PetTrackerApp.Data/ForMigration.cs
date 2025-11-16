@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace PetTrackerApp.Data
 {
-    /// <summary>
-    /// SADECE MIGRATION İÇİN KULLANILIR - GERÇEK UYGULAMAYI ETKİLEMEZ!
+    /// burayi migration islemleri icin olusturduk
+    /// projeyi etkilemez
     ///
     /// Bu class neden gerekli?
     /// - EF Core migration araçları (dotnet ef migrations add) DbContext'e ihtiyaç duyar
@@ -24,7 +24,8 @@ namespace PetTrackerApp.Data
     /// - Migration sadece model yapısına (class'lar, property'ler) bakar
     /// - Veritabanını gerçekten açmaz, sadece şema kodunu oluşturur
     /// - "pettracker_design.db" geçici bir isim, asıl DB MauiProgram.cs'de tanımlı
-    /// </summary>
+    /// 
+
     public class ForMigration : IDesignTimeDbContextFactory<PetTrackerAppDbContext>
     {
         public PetTrackerAppDbContext CreateDbContext(string[] args)

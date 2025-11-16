@@ -6,7 +6,7 @@
              Title="PetListView"
              NavigationPage.HasNavigationBar="False">
 
-    <!-- Expanded Header -->
+    <!-- Dev başlık -->
     <Grid x:Name="ExpandedHeader"
       HeightRequest="250"
       VerticalOptions="Start"
@@ -26,7 +26,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Command="" button command buraya gelecek-->
+        <!-- Command="" button command buraya gelecek - ayarlar butonu -->
         <Button Grid.Row="0"             
             ImageSource="icon_option.png"
             BackgroundColor="#40FFFFFF"
@@ -40,7 +40,8 @@
             SemanticProperties.Description="Dil ve Uygulama Ayarları"
             SemanticProperties.Hint="Uygulama ayarlarını açar">
         </Button>
-
+        
+        <!-- Uygulama logosu ve slogonu -->
         <VerticalStackLayout Grid.Row="1"
                          Spacing="0"
                          HorizontalOptions="Center"
@@ -61,6 +62,7 @@
                Margin="0,-80,0,0"
                SemanticProperties.Description="Uygulamanın text gorseli"/>
 
+            <!-- Slogan //buraya slogan geliyor (her dilde yaziliyor mu daha test edilmedi) -->
             <Label Text="{x:Static lang:AppResources.App_Slogan}"
                FontSize="15"
                TextColor="White"
