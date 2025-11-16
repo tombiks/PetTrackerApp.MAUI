@@ -81,7 +81,6 @@
 	  <Folder Include="Converters\" />
 	  <Folder Include="Controls\" />
 	  <Folder Include="Converters\" />
-	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 	<ItemGroup>

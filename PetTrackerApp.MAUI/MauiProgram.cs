@@ -4,6 +4,9 @@ using PetTrackerApp.Data;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using PetTrackerApp.Data.Mappings;
+using PetTrackerApp.Data.Services;
+using PetTrackerApp.MAUI.Views;
+using PetTrackerApp.MAUI.ViewModels;
 
 namespace PetTrackerApp.MAUI
 {
@@ -23,6 +26,25 @@ namespace PetTrackerApp.MAUI
 
             //automapper'i servislere ekleyip mapping profile'i belirtiyoruz
             builder.Services.AddAutoMapper(typeof(PetMappingProfile));
+
+            //builde eklenecek veritabanı ile ilgili servisleri bu yorum satiri altinda toplayalım
+            //burayi kullanırken addscoped ile ekliyoruz cunku dbcontext scoped
+            //eger addsingleton yaparsak uygulama boyunca tek bir dbcontext olusur ve bu da sorunlara neden olur (veri tutarsizligi, ram kullanimi vs) -performans
+            //eger addtransient yaparsak her istek icin yeni dbcontext olusur bu da performans sorunlarina yol acabilir
+            //scoped ile her istek icin yeni dbcontext olusur ama ayni istek icinde ayni dbcontext kullanilir
+            builder.Services.AddScoped<PetService>();
+
+
+            //builde eklenecek viewmodel'leri bu yorum satiri altinda toplayalım
+            //petlistview'i bilerek singleton yaptık kalıcı olmasını istiyoruz, sürekli transient'den yeni nesne oluşturulmasın diye.
+            //çünkü viewmodel içinde dbcontext kullanmıyoruz, sadece servisleri kullanıyoruz.
+            //eğer viewmodel içinde dbcontext kullanıyor olsaydık scoped yapmamız gerekirdi.
+            //transient yapmamızın sebebi, view'in sürekli yeniden olusmasi performans düsürür.
+            //biz listviewmodel icinde degisiklikleri message's ile yapacagiz böylelikle sürekli her petlistview'e döndügümüzde yeniden olusmayacak +performans
+            builder.Services.AddSingleton<PetListViewModel>();
+
+            //builde eklenecek view'leri bu yorum satiri altinda toplayalım
+            builder.Services.AddSingleton<PetListView>();
 
 
 #if DEBUG
