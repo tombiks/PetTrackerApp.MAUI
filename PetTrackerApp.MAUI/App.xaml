@@ -13,6 +13,7 @@
             <!-- Imageleri cache ediyoruz burada, sürekli sayfada tekrar yüklemesin diye--> 
             <FileImageSource x:Key="PetPlus_Logo" File="petplus_logo.svg" />
             <FileImageSource x:Key="PetPlus_Text" File="petplus_text.svg" />
+            <FileImageSource x:Key="Icon_Avatar" File="icon_pet_avatar_default.svg" />
 
         </ResourceDictionary>
     </Application.Resources>

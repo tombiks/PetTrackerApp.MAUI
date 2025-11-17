@@ -1,8 +1,10 @@
 ﻿using PetTrackerApp.Data.Enums;
+using System.ComponentModel;
 
 namespace PetTrackerApp.Data.Models
 {
-    public class Pet
+    //changetrackingproxies özelligini kullanabilmek icin INotifyPropertyChanging ve INotifyPropertyChanged interface'lerini implement ediyoruz
+    public class Pet : INotifyPropertyChanging, INotifyPropertyChanged
     {
         //burada tüm degiskenlerimiz virtual olarak tanimliyoruz
         //böylelikle ef core bu property'leri override edebilir
@@ -15,5 +17,12 @@ namespace PetTrackerApp.Data.Models
         public virtual DateTime DateOfBirth { get; set; }
         public virtual string PicturePath { get; set; } = string.Empty;
         public virtual DateTime CreatedAt { get; set; }
+
+
+        //implement ettigimiz interface'lerin event'lerini tanimliyoruz
+        //bunları tanımlamazsak hata alırız - bunu ef core changetrackingproxies için kullanacak ama istersek bizde degisiklikleri dinlemek icin kullanabiliriz
+        public event PropertyChangingEventHandler? PropertyChanging;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

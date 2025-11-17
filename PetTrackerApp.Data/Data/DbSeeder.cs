@@ -14,8 +14,7 @@ namespace PetTrackerApp.Data.Data
         {
             if (!context.Pets.Any()) //Eger Pets tablosu bos ise
             {
-                var petFaker = new Faker<Models.Pet>()
-                    .RuleFor(p => p.Id, f => f.IndexFaker)
+                var petFaker = new Faker<Models.Pet>()                    
                     .RuleFor(p => p.Name, f => f.Name.FirstName())
                     .RuleFor(p => p.PetType, f => f.PickRandom<PetType>())
                     .RuleFor(p => p.PetGender, f => f.PickRandom<PetGender>())
