@@ -19,7 +19,7 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class AppResources {
@@ -84,6 +84,24 @@ namespace PetTrackerApp.MAUI.Resources.Languages {
         public static string PetGender_Male {
             get {
                 return ResourceManager.GetString("PetGender_Male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Months old.
+        /// </summary>
+        public static string PetInfo_Age_MonthsOld {
+            get {
+                return ResourceManager.GetString("PetInfo_Age_MonthsOld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Years old.
+        /// </summary>
+        public static string PetInfo_Age_YearsOld {
+            get {
+                return ResourceManager.GetString("PetInfo_Age_YearsOld", resourceCulture);
             }
         }
         

@@ -126,6 +126,12 @@
   <data name="PetGender_Male" xml:space="preserve">
     <value>Male</value>
   </data>
+  <data name="PetInfo_Age_MonthsOld" xml:space="preserve">
+    <value>Months old</value>
+  </data>
+  <data name="PetInfo_Age_YearsOld" xml:space="preserve">
+    <value>Years old</value>
+  </data>
   <data name="PetType_Bird" xml:space="preserve">
     <value>Bird</value>
   </data>

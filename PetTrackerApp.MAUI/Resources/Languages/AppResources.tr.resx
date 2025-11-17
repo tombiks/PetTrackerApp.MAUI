@@ -126,6 +126,12 @@
   <data name="PetGender_Male" xml:space="preserve">
     <value>Erkek</value>
   </data>
+  <data name="PetInfo_Age_MonthsOld" xml:space="preserve">
+    <value>Aylık</value>
+  </data>
+  <data name="PetInfo_Age_YearsOld" xml:space="preserve">
+    <value>Yaşında</value>
+  </data>
   <data name="PetType_Bird" xml:space="preserve">
     <value>Kuş</value>
   </data>
