@@ -142,13 +142,13 @@
                                             HeightRequest="44"
                                             HorizontalOptions="End"
                                             Padding="0">
-                                        <Button.Behaviors>
+                                        <!--<Button.Behaviors>
                                             <toolkit:TouchBehavior
                                                 Command="{Binding SettingsCommand}"
                                                 CommandParameter="{Binding .}"
                                                 PressedOpacity="0.6"
                                                 PressedScale="0.98" />
-                                        </Button.Behaviors>
+                                        </Button.Behaviors>-->
                                     </Button>
 
                                     <!-- Avatar Circle + Type Icon Badge -->
