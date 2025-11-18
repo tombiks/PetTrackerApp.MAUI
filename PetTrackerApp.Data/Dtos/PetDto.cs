@@ -9,24 +9,24 @@ namespace PetTrackerApp.Data.Dtos
 {
     public class PetDto
     {
-        public string name { get; set; } = string.Empty;
-        public PetType petType { get; set; }
-        public PetGender petGender { get; set; }
-        public DateTime dateOfBirth { get; set; }
-        public string picturePath { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public PetType PetType { get; set; }
+        public PetGender PetGender { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string PicturePath { get; set; } = string.Empty;
 
 
         //UI icin alttaki property'leri ekliyoruz, bu propertylerin veritabaninda karsiligi yok - sadece UI'de kullanilacak
         //Sadece get olarak tanımlı olduklari icin mapping islemlerinde sorun yasamayiz(Umarım)
 
         //erkekse typegenderbackground mavi, dişiyse pembe olsun
-        public string GenderColor => petGender == PetGender.Male ? "#99D9EA" : "#FFB6D9";
+        public string GenderColor => PetGender == PetGender.Male ? "#99D9EA" : "#FFB6D9";
 
         //erkekse erkek sembolü, dişiyse dişi sembolü
-        public string GenderSymbol => petGender == PetGender.Male ? "♂" : "♀";
+        public string GenderSymbol => PetGender == PetGender.Male ? "♂" : "♀";
 
         //pet türüne göre ikon belirleme (pets.ttf fontunda tanımlı ikonlar)
-        public string PetTypeIcon => petType switch
+        public string PetTypeIcon => PetType switch
         {
             PetType.Bird => "\ue900",
             PetType.Dog => "\ue901",
@@ -55,13 +55,13 @@ namespace PetTrackerApp.Data.Dtos
             get
             {
                 var today = DateTime.Today;
-                var years = today.Year - dateOfBirth.Year;
+                var years = today.Year - DateOfBirth.Year;
 
-                if (dateOfBirth.Date > today.AddYears(-years))
+                if (DateOfBirth.Date > today.AddYears(-years))
                     years--;
 
-                var months = today.Month - dateOfBirth.Month;
-                if (today.Day < dateOfBirth.Day)
+                var months = today.Month - DateOfBirth.Month;
+                if (today.Day < DateOfBirth.Day)
                     months--;
 
                 if (months < 0)

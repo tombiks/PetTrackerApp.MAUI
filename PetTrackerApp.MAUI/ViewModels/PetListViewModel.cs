@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input; // RelayCommand - butona komut baglamak icin
 using System.Collections.ObjectModel; // ObservableCollection - normal liste disinda degisiklikleri UI'a bildirmek icin
 using PetTrackerApp.Data.Dtos; //PetDto'ya erismek icin
-using PetTrackerApp.Data.Services; // PetService'e erismek icin
+using PetTrackerApp.Data.Services.Pets; // PetService'e erismek icin
 
 // onbilgi: bu sayafada cokca kullanacagimiz 2 attribute hakkinda aciklama:
 // [ObservableProperty]: Bu attribute, bir alan (field) tanimladigimizda, otomatik olarak o alana karsilik gelen bir property olusturur.

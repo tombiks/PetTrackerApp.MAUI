@@ -18,6 +18,10 @@ namespace PetTrackerApp.Data.Models
         public virtual string PicturePath { get; set; } = string.Empty;
         public virtual DateTime CreatedAt { get; set; }
 
+        // Navigation properties
+        public virtual ICollection<ReminderCategory> ReminderCategories { get; set; } = new List<ReminderCategory>();
+        public virtual ICollection<NoteCategory> NoteCategories { get; set; } = new List<NoteCategory>();
+
 
         //implement ettigimiz interface'lerin event'lerini tanimliyoruz
         //bunları tanımlamazsak hata alırız - bunu ef core changetrackingproxies için kullanacak ama istersek bizde degisiklikleri dinlemek icin kullanabiliriz

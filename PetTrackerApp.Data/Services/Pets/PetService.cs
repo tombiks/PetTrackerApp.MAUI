@@ -9,8 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetTrackerApp.Data.Services
-{    
+namespace PetTrackerApp.Data.Services.Pets
+{
     public class PetService
     {
         //readonly olarak map ve context tanimliyoruz. readonly olarak tanimlamamizin sebebi bu degerlerin sadece constructor(kurucu metot) icinde set edilebilecek olmasi
@@ -30,9 +30,11 @@ namespace PetTrackerApp.Data.Services
         //task'in icinde int donduruyoruz, petidyi dondurmek icin, petid'yi test icin donduruyoruz. ekliyor mu?
         public async Task<int> CreatePetAsync(PetDto petDto)
         {
+            if (petDto == null) throw new ArgumentNullException(nameof(petDto));//petdto null gelirse hata yakala,Aliye
+
             //dto nesnesini entity nesnesine mapliyoruz
             var pet = _mapper.Map<Pet>(petDto);
-
+           
             //olusturma tarihini dtodan almadıgimiz icin kendimiz ekliyoruz
             //id zaten primary key oldugu icin otomatik artacaktir.
             pet.CreatedAt = DateTime.UtcNow;
@@ -45,10 +47,13 @@ namespace PetTrackerApp.Data.Services
         }
 
         //Pet U - Pet Update
-        public async Task UptadePetAsync(int id, PetDto petDto)
+        public async Task UpdatadePetAsync(int id, PetDto petDto) //Update isim hatalıydı sadece--upate'i update yaptım-Aliye
         {
             var existingPet = await _dbContext.Pets.FindAsync(id);
-            
+
+            if (existingPet == null)
+                throw new Exception($"Pet with id {id} not found."); //Hata kontrolü eklendi!Aliye
+
             //gelen dto ile mevcut pet nesnesini guncelliyoruz
             _mapper.Map(petDto, existingPet);
 
@@ -61,14 +66,14 @@ namespace PetTrackerApp.Data.Services
 
         //Pet D - Pet Delete
         public async Task DeletePetAsync(int petId)
+        {
+            var pet = await _dbContext.Pets.FindAsync(petId);
+            if (pet != null)
             {
-                var pet = await _dbContext.Pets.FindAsync(petId);
-                if (pet != null)
-                {
-                    _dbContext.Pets.Remove(pet);
-                    await _dbContext.SaveChangesAsync();
-                }
+                _dbContext.Pets.Remove(pet);
+                await _dbContext.SaveChangesAsync();
             }
+        }
 
         //Pet R - Pet Read
         //parametre olarak petid aliyoruz - hangi peti gösterecegimizi belirlemek icin
@@ -76,7 +81,9 @@ namespace PetTrackerApp.Data.Services
         //boylelikle uide kullanacagiz
         public async Task<PetDto> GetPetAsync(int petId)
         {
-            var pet = await _dbContext.Pets.FindAsync(petId);            
+            var pet = await _dbContext.Pets.FindAsync(petId);
+            if (pet == null)
+                return null; //pet null dönebilir, eklendi!!Aliye
             var petDto = _mapper.Map<PetDto>(pet);
             return petDto;
         }
