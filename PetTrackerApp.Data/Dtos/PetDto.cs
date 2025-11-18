@@ -41,7 +41,13 @@ namespace PetTrackerApp.Data.Dtos
         };
 
         //eğer picturePath boşsa default avatar göster, doluysa picturePath'i göster
-        public string DisplayPicture => string.IsNullOrEmpty(PicturePath) ? "default_avatar.png" : PicturePath;
+        public string DisplayPicture => picturePath;
+
+        //fotografı var mı yok mu kontrolü (PERFORMANS için boolean property)
+        public bool HasPhoto => !string.IsNullOrEmpty(picturePath);
+
+        //fotografı YOK mu kontrolü (UI için inverted boolean - Converter'a gerek kalmaz)
+        public bool HasNoPhoto => string.IsNullOrEmpty(picturePath);
 
         //yas hesaplama (yil.ay olarak)
         public double Age

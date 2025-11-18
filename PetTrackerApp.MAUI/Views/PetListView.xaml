@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:lang="clr-namespace:PetTrackerApp.MAUI.Resources.Languages"
+             xmlns:helpers="clr-namespace:PetTrackerApp.MAUI.Helpers"
              xmlns:dto="clr-namespace:PetTrackerApp.Data.Dtos;assembly=PetTrackerApp.Data"
              x:Class="PetTrackerApp.MAUI.Views.PetListView"
              Title="PetListView"
@@ -134,14 +135,16 @@
                                 <Grid Grid.Row="0" RowDefinitions="Auto,*">
 
                                     <!-- Edit Button -->
-                                    <Button Text="✏️"
-                                            FontSize="24"
-                                            BackgroundColor="#E3F2FD"
+                                    <Button Text="{x:Static helpers:IconConstants.PetEdit}"
+                                            FontFamily="pets"
+                                            TextColor="AntiqueWhite"
+                                            FontSize="33"
+                                            BackgroundColor="#FFA500"
                                             CornerRadius="10"
-                                            WidthRequest="44"
-                                            HeightRequest="44"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
                                             HorizontalOptions="End"
-                                            Padding="0">
+                                            Padding="0,3,0,0">
                                         <!--<Button.Behaviors>
                                             <toolkit:TouchBehavior
                                                 Command="{Binding SettingsCommand}"
@@ -167,10 +170,24 @@
                                                 <RoundRectangle CornerRadius="55"/>
                                             </Border.StrokeShape>
 
-                                            <Image Source="{Binding DisplayPicture}"
-                                                   Aspect="AspectFill"/>
-                                        </Border>
+                                            <!-- Grid: Image ve Label'i aynı yerde tut -->
+                                            <Grid>
+                                                <!-- Fotoğraf VARSA Image göster -->
+                                                <Image Source="{Binding DisplayPicture}"
+                                                       Aspect="AspectFill"
+                                                       IsVisible="{Binding HasPhoto}"/>
 
+                                                <!-- Fotoğraf YOKSA Icon göster -->
+                                                <Label Text="{x:Static helpers:IconConstants.PetAvatarDefault}"
+                                                       FontFamily="pets"
+                                                       FontSize="80"
+                                                       TextColor="#FFA500"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       IsVisible="{Binding HasNoPhoto}"/> 
+                                            </Grid>
+
+                                        </Border>
                                         <!-- Type Icon Badge (Font Icon + GenderColor) -->
                                         <Border WidthRequest="36"
                                                 HeightRequest="36"
@@ -188,8 +205,8 @@
                                             </Border.Shadow>
 
                                             <Label Text="{Binding PetTypeIcon}"
-                                                   FontFamily="icomoon"
-                                                   FontSize="20"
+                                                   FontFamily="pets"
+                                                   FontSize="23"
                                                    TextColor="{Binding GenderColor}"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="Center"/>
